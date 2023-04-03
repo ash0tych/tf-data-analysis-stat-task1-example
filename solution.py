@@ -9,9 +9,9 @@ def solution(x: np.array) -> float:
     from scipy.optimize import minimize
     
     def objective(a: float, x: np.array) -> float:
-    t = 21
-    s_estimated = a * (t**2) / 2
-    return np.sum(np.abs(s_estimated - x))
+        t = 21
+        s_estimated = a * (t**2) / 2
+        return np.sum(np.abs(s_estimated - x))
     
     result = minimize(objective, 0, args=(x), method="L-BFGS-B")
     return result.x[0]
